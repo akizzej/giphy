@@ -1,6 +1,16 @@
 body{
     background-color: #c0c5ce;
 }
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    text-shadow: 3px 3px black;
+    font-size: 5em;
+}
+p {
+    color: white;
+    font-size: 1.5em;
+}
 .container{
     width: 65%;
     margin: 0 auto;
