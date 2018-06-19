@@ -1,3 +1,28 @@
 //se declaran variables para guardar valores de input y elementos (HTML)
 const input =document.querySelector("input")
 const container=document.getElementById("elementos")
+
+input.addEventListener("keypress",(darEnter)=>
+{
+    let key = darEnter.which || darEnter.keyCode;
+    if (key ===13)
+    {
+        let gif = input.value;
+        input.value = ""; //limpiar casilla
+        container.innerHTML="";
+        //url que entrega pagina giphy apikey: U6ez8MR69J8unnN3fy2c4ARz589m0Lz3
+        fetch(`https://api.giphy.com/v1/gifs/search?api_key=U6ez8MR69J8unnN3fy2c4ARz589m0Lz3&q=${gif}&limit=25&offset=0&rating=G&lang=en`)
+        .then(response =>response.json())
+        .then(respuesta =>{
+            renderInfo(respuesta);
+
+        })
+    }
+})
+const renderInfo = respuesta =>{
+    respuesta.data.forEach(element => {
+        let gifImage = element.images.downsized.url;
+        container.innerHTML += `<img src ="${gifImage}">`;
+        
+    });
+}  
