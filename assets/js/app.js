@@ -13,12 +13,13 @@ input.addEventListener("keypress",(darEnter)=>
         //url que entrega pagina giphy apikey: U6ez8MR69J8unnN3fy2c4ARz589m0Lz3
         fetch(`https://api.giphy.com/v1/gifs/search?api_key=U6ez8MR69J8unnN3fy2c4ARz589m0Lz3&q=${gif}&limit=25&offset=0&rating=G&lang=en`)
         .then(response =>response.json())
-        .then(respuesta =>{
+        .then(respuesta =>{ //respuesta es donde llegan mis json
             renderInfo(respuesta);
 
         })
     }
 })
+//declaro una constante para guardar mis respuestas
 const renderInfo = respuesta =>{
     respuesta.data.forEach(element => {
         let gifImage = element.images.downsized.url;
