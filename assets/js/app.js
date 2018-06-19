@@ -2,9 +2,9 @@
 const input =document.querySelector("input")
 const container=document.getElementById("elementos")
 
-input.addEventListener("keypress",(darEnter)=>
+input.addEventListener("keypress",(Enter)=>
 {
-    let key = darEnter.which || darEnter.keyCode;
+    let key = Enter.which || Enter.keyCode;
     if (key ===13)
     {
         let gif = input.value;
